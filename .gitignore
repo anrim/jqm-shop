@@ -1,3 +1,6 @@
+.project
+*~
+*.diff
+*.patch
 .DS_Store
-*.tmp
-*.bak
+gitstatus.log
