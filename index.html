@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+        <link rel="stylesheet" href="css/jquery.mobile-1.0b2.min.css">
+        <script src="js/jquery-1.6.2.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="js/jquery.mobile-1.0b2.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="js/backbone-0.5.2.js" type="text/javascript" charset="utf-8"></script>
+        <script type="text/javascript" charset="utf-8">
+            $.mobile.loadingMessage = "My custom message!";
+        </script>
+        <!--<style type="text/css" media="screen">
+            #footer .ui-btn .ui-btn-inner { padding-top: 40px !important; }
+    		#footer .ui-btn .ui-icon { width: 30px!important; height: 30px!important; margin-left: -15px !important; box-shadow: none!important; -moz-box-shadow: none!important; -webkit-box-shadow: none!important; -webkit-border-radius: none !important; border-radius: none !important; }
+            .ui-icon-home { background: url(images/glypish/53-house.png) center center no-repeat;}
+            .ui-icon-products { background: url(images/glypish/53-house.png) center center no-repeat;}
+            .ui-icon-account { background: url(images/glypish/53-house.png) center center no-repeat;}
+            .ui-icon-info { background: url(images/glypish/53-house.png) center center no-repeat;}
+        </style>-->
+    </head>
+    <body>
+        <!-- Pages -->
+        <div data-role="page" id="home">
+            <div data-role="header" data-position="fixed">
+                <h1>Home</h1>
+            </div>
+            <div data-role="content">
+                <ul data-role="listview">
+        			<li><a href="#products"><h3>Products</h3></a></li>
+        		</ul>
+            </div>
+            <div data-role="footer" data-id="footer" data-position="fixed">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#home" data-transition="none" data-icon="home" data-iconspos="top">Home</a></li>
+                        <li><a href="#topsellers" data-transition="none" data-icon="star" data-iconspos="top">Top Sellers</a></li>
+                        <li><a href="#categories" data-transition="none" data-icon="grid" data-iconspos="top">Categories</a></li>
+                        <li><a href="#cart" data-transition="none" data-icon="grid" data-iconspos="top">Cart</a></li>
+                        <li><a href="#account" data-transition="none" data-icon="gear" data-iconspos="top">Your Account</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div data-role="page" id="products">
+            <div data-role="header" data-position="fixed">
+                <a data-icon="arrow-l" data-rel="back">Home</a>
+                <h1>Products</h1>
+                <a data-icon="plus" data-iconpos="notext" data-rel="dialog" data-transition="slidedown" href="#p1">Add</a>
+            </div>
+            <div data-role="content">
+    			<div data-role="fieldcontain" class="ui-body">
+    		        <input type="search" name="password" id="search" value="" />
+        			<a data-rel="dialog" data-inline=true data-role="button" data-transition="pop" href="#dialog1">Filter</a>
+    			</div>
+    			<ul data-role="listview">
+        			<li>
+        			    <a href="#product1">
+        				    <img alt="image" src="images/img1.jpg" />
+        				    <h3>Title</h3>
+        				    <p>Description</p>
+        			    </a>
+        			</li>
+        			<li>
+        			    <a href="#product1">
+        				    <img alt="image" src="images/img1.jpg" />
+        				    <h3>Title</h3>
+        				    <p>Description</p>
+        			    </a>
+        			</li>
+        			<li>
+        			    <a href="#product1">
+        				    <img alt="image" src="images/img1.jpg" />
+        				    <h3>Title</h3>
+        				    <p>Description</p>
+        			    </a>
+        			</li>
+        		</ul>
+            </div>
+            <div data-role="footer" data-id="footer" data-position="fixed">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#home" data-transition="none" data-icon="home" data-iconspos="top">Home</a></li>
+                        <li><a href="#topsellers" data-transition="none" data-icon="star" data-iconspos="top">Top Sellers</a></li>
+                        <li><a href="#categories" data-transition="none" data-icon="grid" data-iconspos="top">Categories</a></li>
+                        <li><a href="#cart" data-transition="none" data-icon="grid" data-iconspos="top">Cart</a></li>
+                        <li><a href="#account" data-transition="none" data-icon="gear" data-iconspos="top">Your Account</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div data-role="page" id="product1">
+            <div data-role="header" data-position="fixed">
+                <a data-icon="arrow-l" data-rel="back">Products</a>
+                <h1>Product</h1>
+            </div>
+            <div data-role="content">
+                <h2>Title</h2>
+            </div>
+            <div data-role="footer" data-id="footer" data-position="fixed">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#home" data-transition="none" data-icon="home" data-iconspos="top">Home</a></li>
+                        <li><a href="#topsellers" data-transition="none" data-icon="star" data-iconspos="top">Top Sellers</a></li>
+                        <li><a href="#categories" data-transition="none" data-icon="grid" data-iconspos="top">Categories</a></li>
+                        <li><a href="#cart" data-transition="none" data-icon="grid" data-iconspos="top">Cart</a></li>
+                        <li><a href="#account" data-transition="none" data-icon="gear" data-iconspos="top">Your Account</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div data-role="page" data-title="Top Sellers" id="topsellers">
+            <div data-role="header">
+                <a data-icon="arrow-l" data-rel="back">Back</a>
+                <h1>Top Sellers</h1>
+            </div>
+            <div data-role="content">
+                <ul data-role="listview">
+        			<li>
+        			    <a href="#product1">
+        				    <img alt="image" src="images/img1.jpg" />
+        				    <h3>Title</h3>
+        				    <p>Description</p>
+        			    </a>
+        			</li>
+        			<li>
+        			    <a href="#product1">
+        				    <img alt="image" src="images/img1.jpg" />
+        				    <h3>Title</h3>
+        				    <p>Description</p>
+        			    </a>
+        			</li>
+        			<li>
+        			    <a href="#product1">
+        				    <img alt="image" src="images/img1.jpg" />
+        				    <h3>Title</h3>
+        				    <p>Description</p>
+        			    </a>
+        			</li>
+        		</ul>
+            </div>
+            <div data-role="footer" data-id="footer" data-position="fixed">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#home" data-transition="none" data-icon="home" data-iconspos="top">Home</a></li>
+                        <li><a href="#topsellers" data-transition="none" data-icon="star" data-iconspos="top">Top Sellers</a></li>
+                        <li><a href="#categories" data-transition="none" data-icon="grid" data-iconspos="top">Categories</a></li>
+                        <li><a href="#cart" data-transition="none" data-icon="grid" data-iconspos="top">Cart</a></li>
+                        <li><a href="#account" data-transition="none" data-icon="gear" data-iconspos="top">Your Account</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div data-role="page" data-title="Categories" id="categories">
+            <div data-role="header">
+                <a data-icon="arrow-l" data-rel="back">Back</a>
+                <h1>Categories</h1>
+            </div>
+            <div data-role="content">
+                <ul data-role="listview">
+        			<li>
+        			    <a href="#product1">
+        				    <img alt="image" src="images/img1.jpg" />
+        				    <h3>Books</h3>
+        				    <p>Description</p>
+        			    </a>
+        			</li>
+        			<li>
+        			    <a href="#product1">
+        				    <img alt="image" src="images/img1.jpg" />
+        				    <h3>Movies &amp; TV</h3>
+        				    <p>Description</p>
+        			    </a>
+        			</li>
+        			<li>
+        			    <a href="#product1">
+        				    <img alt="image" src="images/img1.jpg" />
+        				    <h3>Electronics</h3>
+        				    <p>Description</p>
+        			    </a>
+        			</li>
+        		</ul>
+            </div>
+            <div data-role="footer" data-id="footer" data-position="fixed">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#home" data-transition="none" data-icon="home" data-iconspos="top">Home</a></li>
+                        <li><a href="#topsellers" data-transition="none" data-icon="star" data-iconspos="top">Top Sellers</a></li>
+                        <li><a href="#categories" data-transition="none" data-icon="grid" data-iconspos="top">Categories</a></li>
+                        <li><a href="#cart" data-transition="none" data-icon="grid" data-iconspos="top">Cart</a></li>
+                        <li><a href="#account" data-transition="none" data-icon="gear" data-iconspos="top">Your Account</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div data-role="page" data-title="Cart" id="cart">
+            <div data-role="header">
+                <a data-icon="arrow-l" data-rel="back">Back</a>
+                <h1>Your Cart</h1>
+            </div>
+            <div data-role="content">
+                <ul data-role="listview">
+        			<li>
+        			    <a href="#product1">
+        				    <img alt="image" src="images/img1.jpg" />
+        				    <h3>Product1</h3>
+        				    <p>Description</p>
+        			    </a>
+        			</li>
+        		</ul>
+            </div>
+            <div data-role="footer" data-id="footer" data-position="fixed">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#home" data-transition="none" data-icon="home" data-iconspos="top">Home</a></li>
+                        <li><a href="#topsellers" data-transition="none" data-icon="star" data-iconspos="top">Top Sellers</a></li>
+                        <li><a href="#categories" data-transition="none" data-icon="grid" data-iconspos="top">Categories</a></li>
+                        <li><a href="#cart" data-transition="none" data-icon="grid" data-iconspos="top">Cart</a></li>
+                        <li><a href="#account" data-transition="none" data-icon="gear" data-iconspos="top">Your Account</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div data-role="page" data-title="Account" id="account">
+            <div data-role="header">
+                <a data-icon="arrow-l" data-rel="back">Back</a>
+                <h1>Your Account</h1>
+            </div>
+            <div data-role="content">
+                <h2>About</h2>
+                <p>Online shop implemented using jQuery Mobile</p>
+            </div>
+            <div data-role="footer" data-id="footer" data-position="fixed">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#home" data-transition="none" data-icon="home" data-iconspos="top">Home</a></li>
+                        <li><a href="#topsellers" data-transition="none" data-icon="star" data-iconspos="top">Top Sellers</a></li>
+                        <li><a href="#categories" data-transition="none" data-icon="grid" data-iconspos="top">Categories</a></li>
+                        <li><a href="#cart" data-transition="none" data-icon="grid" data-iconspos="top">Cart</a></li>
+                        <li><a href="#account" data-transition="none" data-icon="gear" data-iconspos="top">Your Account</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- Dialogs -->
+        <div data-close-btn-text ="Cancel" data-role="page" id="p1">
+            <div data-role="header">
+                <a data-icon="arrow-l" data-rel="back">Products</a>
+                <h1>New product</h1>
+            </div>
+            <div data-role="content">		
+                <form action="#" method="post">
+                    <fieldset>
+    					<div data-role="fieldcontain">
+                            <input type="text" name="p1_title" id="p1_title" value="" placeholder="Title">
+                            <textarea cols="40" rows="8" name="p1_desc" id="p1_desc" placeholder="Description"></textarea>
+                            <input type="text" name="p1_tags" id="p1_tags" value="" placeholder="Tags">
+                        </div>
+                        <button type="submit" data-theme="a" name="submit" value="submit-value">Submit</button>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+        <div data-role="page" id="dialog1">
+            <div data-role="header">
+                <h1>Dialog</h1>
+            </div>
+            <div data-role="content">
+                <p>Page content goes here.</p>
+                <a data-role="button" data-theme="b" href="#">OK</a>
+                <a data-rel="back" data-role="button" data-theme="c" href="#">Cancel</a>
+            </div>
+        </div>
+        <div data-role="page" id="p2">
+            <div data-role="header">
+                <h1>New Product 2</h2>
+            </div>
+            <div data-role="content">
+                <form action="forms-sample-response.php" method="get">
+    				<fieldset>
+    					<div data-role="fieldcontain">
+    						<label for="p2_title" class="select">Title:</label>
+    						<input type="text" name="p2_title" id="p2_title" value="">
+    					</div>
+    					<div data-role="fieldcontain">
+    						<label for="p2_desc" class="select">Description:</label>
+    						<textarea cols="40" rows="8" name="p2_desc" id="p2_desc"></textarea>
+    					</div>
+    					<div data-role="fieldcontain">
+        					<label for="p2_tags" class="select">Tags:</label>
+        					<input type="text" name="p2_tags" id="p2_tags" value="">
+        				</div>
+    					<button type="submit" data-theme="a" name="submit" value="submit-value">Submit</button>
+    				</fieldset>
+    			</form>
+            </div>
+        </div>
+    </body>
+</html>
